@@ -5,7 +5,7 @@ package com.sls.wyguide;
  */
 public abstract class Constants {
 
-    public static final short TAB_NUMBER_MAP = 0;
-    public static final short TAB_NUMBER_SETTINGS = 1;
+    public static final short TAB_NUMBER_MAP = 1;
+    public static final short TAB_NUMBER_SETTINGS = 0;
 
 }

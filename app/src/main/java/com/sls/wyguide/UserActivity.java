@@ -1,8 +1,11 @@
 package com.sls.wyguide;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,7 +16,7 @@ import android.view.MenuItem;
 import com.sls.wyguide.adapter.TabsPagerFragmentAdapter;
 
 
-public class UserActivity extends AppCompatActivity {
+public class UserActivity extends FragmentActivity {
 
     private static final int LAYOUT = R.layout.activity_main;
     private DrawerLayout mDrawerLayout;
@@ -21,6 +24,7 @@ public class UserActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private Toolbar toolbar;
 
+    public static FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +35,7 @@ public class UserActivity extends AppCompatActivity {
         initToolbar();
         initNavigationView();
         initTabs();
-
+        fragmentManager = getSupportFragmentManager();
     }
 
     private void initToolbar() {
