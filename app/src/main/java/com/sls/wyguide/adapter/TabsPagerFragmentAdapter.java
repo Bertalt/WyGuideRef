@@ -1,13 +1,16 @@
 package com.sls.wyguide.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 
 import com.sls.wyguide.Constants;
+import com.sls.wyguide.Fragments.BlankFragment;
 import com.sls.wyguide.Fragments.SettingsFragment;
+import com.sls.wyguide.MapsActivity;
 import com.sls.wyguide.R;
 
 import java.util.HashMap;
@@ -27,7 +30,7 @@ public class TabsPagerFragmentAdapter extends FragmentPagerAdapter {
         mCtx = ctx;
 
         mTabs.put((int) Constants.TAB_NUMBER_SETTINGS, mCtx.getString(R.string.menu_item_settings));
-        //mTabs.put((int) Constants.TAB_NUMBER_MAP, mCtx.getString(R.string.menu_item_map));
+        mTabs.put((int) Constants.TAB_NUMBER_MAP, mCtx.getString(R.string.menu_item_map));
 
     }
 
@@ -42,10 +45,11 @@ public class TabsPagerFragmentAdapter extends FragmentPagerAdapter {
             }
             case 1:
             {
-              //  return SettingsFragment.getInstance();
+
+                return BlankFragment.getInstance();
             }
         }
-        return SettingsFragment.getInstance();
+        return BlankFragment.getInstance();
     }
 
     @Override

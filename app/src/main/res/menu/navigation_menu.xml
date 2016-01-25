@@ -3,6 +3,12 @@
     android:id="@+id/menu_navigation">
 
     <item
+        android:id="@+id/menu_item_settings"
+        android:orderInCategory="0"
+        android:title="@string/menu_item_settings"
+        android:icon="@drawable/ic_setting_light"
+        />
+    <item
         android:id="@+id/menu_item_map"
         android:orderInCategory="1"
         android:title="@string/menu_item_map"

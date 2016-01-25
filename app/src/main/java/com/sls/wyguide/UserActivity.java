@@ -1,6 +1,7 @@
 package com.sls.wyguide;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -72,9 +73,16 @@ public class UserActivity extends FragmentActivity {
 
                 mDrawerLayout.closeDrawers();
                 switch (item.getItemId()){
+                    case R.id.menu_item_settings:
+                    {
+                        viewPager.setCurrentItem(Constants.TAB_NUMBER_SETTINGS);
+                        break;
+                    }
                     case R.id.menu_item_map:
                     {
-                         viewPager.setCurrentItem(Constants.TAB_NUMBER_MAP);
+                        Intent map_activity = new Intent(getApplicationContext(), MapsActivity.class);
+                        startActivity(map_activity);
+                        break;
                     }
 
                 }
