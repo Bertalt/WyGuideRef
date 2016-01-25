@@ -18,22 +18,12 @@ import java.util.Set;
 /**
  * Created by bertalt on 22.01.16.
  */
-public class SettingsFragment extends Fragment {
+public class SettingsFragment extends AbstractBlankFragment {
 
-    private static Fragment instance;
 
-    public SettingsFragment(){
-        super();
+    public SettingsFragment(String title) {
+        super(title);
     }
-
-    public static Fragment getInstance(){
-
-        if (instance == null)
-            return instance =  new SettingsFragment();
-
-        return instance;
-    }
-
 
     @Nullable
     @Override

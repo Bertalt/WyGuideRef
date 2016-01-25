@@ -1,6 +1,5 @@
 package com.sls.wyguide;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -10,11 +9,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.sls.wyguide.adapter.TabsPagerFragmentAdapter;
+import com.sls.wyguide.adapter.TabsFragmentAdapter;
 
 
 public class UserActivity extends FragmentActivity {
@@ -42,6 +40,7 @@ public class UserActivity extends FragmentActivity {
     private void initToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.app_name);
+        toolbar.setTitleTextColor(getResources().getColor(R.color.colorBackground));
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
@@ -98,7 +97,7 @@ public class UserActivity extends FragmentActivity {
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
 
-        TabsPagerFragmentAdapter tabAdapter = new TabsPagerFragmentAdapter(this,getSupportFragmentManager());
+        TabsFragmentAdapter tabAdapter = new TabsFragmentAdapter(this,getSupportFragmentManager());
         viewPager.setAdapter(tabAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
